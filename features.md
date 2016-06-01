@@ -1,0 +1,26 @@
+-   project
+    -   create
+    -   retrieve
+        -   single
+        -   list
+    -   update
+    -   delete
+-   images
+    -   upload
+    -   delete
+    -   rename
+    -   link
+        -   add
+        -   remove
+    -   view count
+        -   guests
+-   user
+    -   create
+    -   retrieve
+        -   single
+        -   list
+    -   update
+    -   delete
+-   access
+    -   users
+    -   guests
