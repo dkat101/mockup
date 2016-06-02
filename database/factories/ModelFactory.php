@@ -12,17 +12,32 @@
 */
 
 $factory->define(App\User::class, function (Faker\Generator $faker) {
+    return array(
+        'u_id' => $faker->uuid,
+        'f_name' => $faker->firstName,
+        'l_name' => $faker->lastName,
+        'email' => $faker->email,
+        'password' => bcrypt($faker->password),
+        'remember_token' => str_random(10)
+    );
+});
+
+$factory->define(App\Project::class, function (Faker\Generator $faker) {
     return [
-        'name'  => $faker->name,
-        'email' => $faker->safeEmail,
-        //use bcrypt('password') if you want to assert for a specific password, but it might slow down your tests
-        'password' => str_random(10),
+        'p_id' => $faker->uuid,
+        'user_id' => $faker->numberBetween(1, 10),
+        'name' => $faker->name,
+        'description' => $faker->sentence()
     ];
 });
 
-$factory->define(App\PasswordReset::class, function (Faker\Generator $faker) {
+$factory->define(App\Image::class, function (Faker\Generator $faker) {
     return [
-        'email'  => $faker->safeEmail,
-        'token' => str_random(10),
+        'i_id' => $faker->uuid,
+        'project_id' => $faker->uuid,
+        'display_name' => $faker->name,
+        'file_name' => $faker->name,
+        'links' => $faker->paragraph,
+        'views' => $faker->numberBetween(1, 100)
     ];
 });

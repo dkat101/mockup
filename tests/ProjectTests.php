@@ -31,12 +31,12 @@ class ProjectTests extends TestCase {
          */
         $this->authUserPost('/api/project/new', [
             'p_id' => $faker->p_id,
-            'user_id' => $faker->user_id,
+            'user_id' => $faker->u_id,
             'name' => $faker->name,
             'description' => $faker->description
-        ])->seeApiSuccess()
-            ->seeJson(['data' => true])
-            ->seeJson(['errors' => false]);
+            ])->seeApiSuccess()
+                ->seeJson(['data' => true])
+                ->seeJson(['errors' => false]);
 
         /**
          * Testing whether a project exists in database.
