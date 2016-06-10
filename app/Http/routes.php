@@ -35,7 +35,7 @@ $api->group(['middleware' => ['api', 'api.auth']], function ($api) {
     $api->get('user/single/{u_id}', 'UserController@getSingle')
         ->where('u_id', '[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}');
     $api->get('user/list', 'UserController@getList');
-    $api->post('user/new', 'UserController@create');
+    $api->post('user/new', 'Auth\AuthController@register');
     $api->post('user/edit/{u_id}', 'UserController@update');
     $api->post('user/delete/{u_id}', 'UserController@delete');
 

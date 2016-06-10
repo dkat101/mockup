@@ -21,7 +21,7 @@ return [
     |
     */
 
-    'secret' => env('JWT_SECRET', 'changeme'),
+    'secret' => env('JWT_SECRET', 'QVlqHlXu4X9iyBpCuRFWdRrsIrZAphkp'),
 
     /*
     |--------------------------------------------------------------------------
@@ -85,7 +85,7 @@ return [
     |
     */
 
-    'identifier' => 'id',
+    'identifier' => 'u_id',
 
     /*
     |--------------------------------------------------------------------------
